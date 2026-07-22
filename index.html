@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navbar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!-- ================= PRELOADER ================= -->
+
+<div id="preloader">
+
+    <div class="loader-content">
+
+        <div class="loader-logo">
+
+             <img src="http://127.0.0.1:5501/content/dam/royal-enfield/india/logos/logo.svg" alt="Royal Enfield">
+            <span>BHAIRAHAWA</span>
+
+        </div>
+
+        <div class="loader-bar">
+
+            <div class="loader-progress"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+  <nav class="navbar">
+  <div class="logo">
+    <img src="http://127.0.0.1:5501/content/dam/royal-enfield/india/logos/logo.svg" alt="Royal Enfield">
+    <span class="logo-sub">BHAIRAHAWA</span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#">Motorcycles</a></li>
+    <li><a href="#">Locate Us</a></li>
+    <li class="has-dropdown">
+      <a href="#">Rides <span class="caret"></span></a>
+      <div class="dropdown">
+        <a href="#">Upcoming Rides</a>
+        <a href="#">Ride Stories</a>
+        <a href="#">Rider Community</a>
+      </div>
+    </li>
+    <li><a href="#">Accessories</a></li>
+    <li><a href="#">Apparel</a></li>
+    <li><a href="#">Promotions</a></li>
+    <li><a href="#">Support</a></li>
+  </ul>
+  <div class="nav-right">
+      <a href="login.html">Login</a>
+  </div>
+    <!-- Search Icon -->
+<button class="icon-btn" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="22"
+         height="22"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <circle cx="11" cy="11" r="7"></circle>
+        <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
+
+    </svg>
+</button>
+<!-- Full Search Overlay -->
+<div class="search-overlay" id="searchOverlay">
+
+    <button id="closeSearch">&times;</button>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search motorcycles, rides, apparel..."
+        >
+
+        <div id="suggestions"></div>
+
+    </div>
+
+</div>
+    <button class="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+ <section class="slider" class="slider hidden">
+
+        <div class="slide active">
+            <img src="himalayan.jpg" alt="">
+            <div class="overlay"></div>
+
+            <div class="content">
+                <h1>PURE MOTORCYCLING</h1>
+                <p>Built for every adventure.</p>
+
+                <a href="#" class="btn">
+                    Explore
+                </a>
+            </div>
+        </div>
+
+
+        <div class="slide">
+            <img src="CLASSIC 350.jpg" alt="">
+            <div class="overlay"></div>
+
+            <div class="content">
+                <h1>HIMALAYAN 450</h1>
+                <p>Adventure begins where roads end.</p>
+
+                <a href="#" class="btn">
+                    Discover
+                </a>
+            </div>
+        </div>
+
+
+        <div class="slide">
+            <img src="guerilla 450.jpeg" alt="">
+            <div class="overlay"></div>
+
+            <div class="content">
+                <h1>GUERRILLA 450</h1>
+                <p>Modern Roadster.</p>
+
+                <a href="#" class="btn">
+                    Learn More
+                </a>
+            </div>
+        </div>
+
+
+        <div class="slide">
+            <img src="images/slide4.jpg" alt="">
+            <div class="overlay"></div>
+
+            <div class="content">
+                <h1>SHOTGUN 650</h1>
+                <p>Custom Inspired Motorcycle.</p>
+
+                <a href="#" class="btn">
+                    View Details
+                </a>
+            </div>
+        </div>
+
+
+        <!-- Previous -->
+        <button class="prev">
+            <i class="fa-solid fa-chevron-left"><</i>
+        </button>
+
+        <!-- Next -->
+        <button class="next">
+            <i class="fa-solid fa-chevron-right">></i>
+        </button>
+
+        <!-- Dots -->
+        <div class="dots">
+
+            <span class="dot active"></span>
+
+            <span class="dot"></span>
+
+            <span class="dot"></span>
+            <span class="dot"></span>
+
+        </div>
+
+    </section>
+    <!-- ================= MOTORCYCLES ================= -->
+     
+<section class="models">
+
+
+    <h1>MOTORCYCLES</h1>
+   
+<p class="title">
+Explore the complete Royal Enfield lineup available in Our Showroom.
+</p>
+
+<h2 class="series-title">350cc Series (J-Platform)</h2>
+
+<div class="card-container">
+
+<div class="card">
+<img src="hunter350.jpg" alt="Hunter 350">
+
+<div class="card-content">
+
+<span class="category">Urban Roadster</span>
+
+<h2>Hunter 350</h2>
+
+<p>
+A stylish, lightweight urban roadster designed for agile city riding. The Hunter 350 is the most affordable Royal Enfield motorcycle in Nepal.
+</p>
+
+<a href="https://www.royalenfield.com/np/en/motorcycles/hunter-350/"><button >View Details</button></a>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="classic350.jpg" alt="Classic 350">
+
+<div class="card-content">
+
+<span class="category">Retro Motorcycle</span>
+
+<h2>Classic 350</h2>
+
+<p>
+The legendary Classic 350 combines timeless handcrafted styling with modern engineering and dual-channel ABS.
+</p>
+
+<button>View Details</button>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="goanclassic350.jpg" alt="Goan Classic 350">
+
+<div class="card-content">
+
+<span class="category">Bobber Cruiser</span>
+
+<h2>Goan Classic 350</h2>
+
+<p>
+A custom-inspired bobber version of the Classic 350, built for relaxed cruising and unique road presence.
+</p>
+
+<button>View Details</button>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="meteor350.jpg" alt="Meteor 350">
+
+<div class="card-content">
+
+<span class="category">Highway Cruiser</span>
+
+<h2>Meteor 350</h2>
+
+<p>
+Built for long-distance comfort with relaxed ergonomics, forward-set footpegs, and smooth highway performance.
+</p>
+
+<button>View Details</button>
+
+</div>
+</div>
+
+</div>
+
+<h2 class="series-title">400cc+ Series</h2>
+
+<div class="card-container">
+
+<div class="card">
+
+<img src="scram440.jpg" alt="Scram 440">
+
+<div class="card-content">
+
+<span class="category">Scrambler</span>
+
+<h2>Scram 440</h2>
+
+<p>
+A versatile scrambler capable of tackling city roads, highways, and light off-road adventures.
+</p>
+
+<button>View Details</button>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="himalayan450.jpg" alt="Himalayan 450">
+
+<div class="card-content">
+
+<span class="category">Adventure Tourer</span>
+
+<h2>New Himalayan 450</h2>
+
+<p>
+Powered by the Sherpa 450 engine, built to conquer mountains, rough terrain, and long-distance expeditions.
+</p>
+
+<button>View Details</button>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="guerilla 450.jpeg" alt="Guerrilla 450">
+
+<div class="card-content">
+
+<span class="category">Premium Roadster</span>
+
+<h2>Guerrilla 450</h2>
+
+<p>
+A modern premium roadster delivering strong performance, agile handling, and dynamic styling.
+</p>
+
+<button>View Details</button>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+    <!-- ================= RIDES SECTION ================= -->
+
+<section class="rides-section" id="rides" class="rides-section hidden">
+ 
+    <!-- Ride Navbar -->
+    <div class="ride-navbar" id="rideNavbar">
+<div class="logo">
+    <img src="http://127.0.0.1:5501/content/dam/royal-enfield/india/logos/logo.svg" alt="Royal Enfield">
+    <span class="logo-sub">BHAIRAHAWA</span>
+  </div>
+        <ul>
+            <li class="active">ALL RIDES</li>
+            <li>HIMALAYAN ODYSSEY</li>
+            <li>MOTO HIMALAYA</li>
+            <li>LEH LADAKH</li>
+            <li>COMMUNITY RIDES</li>
+        </ul>
+
+    </div>
+
+    <div class="rides-container">
+
+        <div class="ride-card" >
+
+            <img src="himalayan-odyssey-1920x750.jpg">
+
+            <div class="ride-content">
+                <h2>Himalayan Odyssey</h2>
+                <p>Ride across the world's highest mountain roads.</p>
+            </div>
+
+        </div>
+
+        <div class="ride-card">
+
+            <img src="himalayanbasecamp.jpg">
+
+            <div class="ride-content">
+                <h2>Moto Himalaya</h2>
+                <p>Experience Nepal & Himalayas like never before.</p>
+            </div>
+
+        </div>
+
+        <div class="ride-card" >
+
+            <img src="moroccan-odyssey-desktop-kv-new.jpg">
+
+            <div class="ride-content">
+                <h2>Leh Ladakh</h2>
+                <p>The ultimate Royal Enfield adventure.</p>
+            </div>
+
+        </div>
+
+        <div class="ride-card">
+
+            <img src="moto-himalaya-ladakh-2026-desktop-1920x850.jpg">
+
+            <div class="ride-content">
+                <h2>Weekend Escape</h2>
+                <p>Explore hidden roads with fellow riders.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  
+<section class="dealer">
+
+    <div class="dealer-content">
+
+        <h2>Visit Royal Enfield Bhairahawa</h2>
+
+        <p>
+            Siddharthanagar-08<br>
+            Bhairahawa, Rupandehi, Nepal
+        </p>
+
+        <p>📞 +977 9800000000</p>
+
+        <p>✉ info@rebhairahawa.com</p>
+
+        <a
+            href="https://www.google.com/maps"
+            target="_blank"
+            class="dealer-btn">
+
+            Get Directions
+
+        </a>
+
+    </div>
+
+    <div class="map">
+
+        <iframe
+            src="https://www.google.com/maps?q=Bhairahawa,Nepal&output=embed"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+</section>
+</body>
+<!-- ================= DEALER LOCATION ================= -->
+
+
+</html>
