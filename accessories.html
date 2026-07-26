@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Royal Enfield Bhairahawa | Accessories</title>
+
+<link rel="stylesheet" href="accessories.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <img src="images/logo.svg" alt="Royal Enfield">
+
+        <span>BHAIRAHAWA</span>
+
+    </div>
+
+    <ul>
+
+        <li><a href="index.html">Home</a></li>
+        
+        <li><a href="#" class="active">Accessories</a></li>
+
+    </ul>
+
+<div class="cart-icon" id="cartButton">
+
+    🛒
+
+    <span id="cartCount">0</span>
+
+</div>
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+        <h1>GENUINE ACCESSORIES</h1>
+
+        <p>Designed for every ride. Built for every adventure.</p>
+
+    </div>
+
+</section>
+
+<!-- ================= FILTER ================= -->
+
+<section class="categories">
+
+    <button class="filter-btn active" data-filter="all">All</button>
+
+    <button class="filter-btn" data-filter="helmet">Helmets</button>
+
+    <button class="filter-btn" data-filter="jacket">Jackets</button>
+
+    <button class="filter-btn" data-filter="gloves">Gloves</button>
+
+    <button class="filter-btn" data-filter="boots">Boots</button>
+
+    <button class="filter-btn" data-filter="luggage">Luggage</button>
+
+</section>
+<!-- ================= PRODUCTS ================= -->
+
+<section class="products">
+
+<div class="product-card"
+ data-name="Explorer Helmet"
+ data-category="helmet"
+     data-price="18500"
+     data-image="images/helmet.jpg">
+
+<img src="images/helmet.jpg">
+
+<h3>Explorer Helmet</h3>
+
+<p>Premium Touring Helmet</p>
+
+<h4>NPR 18,500</h4>
+
+<button>Add to Cart</button>
+
+</div>
+
+<div class="product-card"
+data-category="jacket"
+ data-name="Explorer Riding Jacket"
+     data-price="24000"
+     data-image="images/jacket.jpg">
+
+<img src="images/jacket.jpg">
+
+<h3>Riding Jacket</h3>
+
+<p>Adventure Touring Jacket</p>
+
+<h4>NPR 24,000</h4>
+
+<button>Add to Cart</button>
+
+</div>
+
+<div class="product-card"
+data-category="gloves"
+ data-name="Explorer Leather Gloves"
+     data-price="6500"
+     data-image="images/gloves.jpg">
+
+<img src="images/gloves.jpg">
+
+<h3>Leather Gloves</h3>
+
+<p>Water Resistant Gloves</p>
+
+<h4>NPR 6,500</h4>
+
+<button>Add to Cart</button>
+
+</div>
+
+<div class="product-card"
+data-category="boots"
+ data-name="Explorer Adventure Boots"
+     data-price="21000"
+     data-image="images/boots.jpg">
+
+<img src="images/boots.jpg">
+
+<h3>Adventure Boots</h3>
+
+<p>Premium Leather Boots</p>
+
+<h4>NPR 21,000</h4>
+
+<button>Add to Cart</button>
+
+</div>
+
+<div class="product-card"
+data-category="luggage"
+ data-name="Explorer Saddle Bag"
+     data-price="15500"
+     data-image="images/saddlebag.jpg">
+
+<img src="images/saddlebag.jpg">
+
+<h3>Saddle Bag</h3>
+
+<p>Long Ride Luggage</p>
+
+<h4>NPR 15,500</h4>
+
+<button>Add to Cart</button>
+
+</div>
+
+<div class="product-card"
+ data-name="Explorer Crash Guard"
+     data-price="9500"
+     data-image="images/crashguard.jpg">
+
+<img src="images/crashguard.jpg">
+
+<h3>Crash Guard</h3>
+
+<p>Heavy Duty Protection</p>
+
+<h4>NPR 9,500</h4>
+
+<button>Add to Cart</button>
+
+</div>
+
+</section>
+
+<div class="toast" id="toast">
+
+    <div class="toast-icon">✓</div>
+
+    <div class="toast-content">
+
+        <h4>Added to Cart</h4>
+
+        <p id="toastText">Product added successfully.</p>
+
+    </div>
+
+    <button id="viewCart">View Cart</button>
+
+</div>
+<!-- ================= SHOPPING CART ================= -->
+
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<div class="shopping-cart" id="shoppingCart">
+
+    <div class="cart-header">
+
+        <h2>Shopping Cart</h2>
+
+        <button id="closeCart">&times;</button>
+
+    </div>
+
+    <div class="cart-items" id="cartItems">
+
+        <div class="empty-cart">
+
+            <div class="cart-icon-big">🛒</div>
+
+            <h3>Your cart is empty</h3>
+
+            <p>Add genuine Royal Enfield accessories to begin your journey.</p>
+
+        </div>
+
+    </div>
+
+    <div class="cart-footer">
+
+        <div class="cart-total">
+
+            <span>Total</span>
+
+            <strong>NPR <span id="cartTotal">0</span></strong>
+
+        </div>
+
+        <button class="checkout-btn">Proceed to Checkout</button>
+
+    </div>
+
+</div>
+<script src="accessories.js"></script>
+
+</body>
+
+</html>

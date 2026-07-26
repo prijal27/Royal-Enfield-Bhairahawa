@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Royal Enfield Bhairahawa | Checkout</title>
+
+    <link rel="stylesheet" href="checkout.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <img src="images/logo.svg" alt="Royal Enfield">
+
+        <span>BHAIRAHAWA</span>
+
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="index.html">Home</a></li>
+
+        <li><a href="accessories.html">Accessories</a></li>
+
+        <li><a href="#" class="active">Checkout</a></li>
+
+    </ul>
+
+</nav>
+
+<!-- ================= PAGE TITLE ================= -->
+
+<section class="page-title">
+
+    <h1>Checkout</h1>
+
+    <p>Complete your purchase securely.</p>
+
+</section>
+
+<!-- ================= CHECKOUT ================= -->
+
+<section class="checkout-container">
+
+    <!-- LEFT -->
+
+    <div class="checkout-form">
+
+        <h2>Contact Information</h2>
+
+        <form id="checkoutForm">
+
+            <div class="input-group">
+
+                <label>Full Name</label>
+
+                <input type="text" id="fullname">
+
+                <small class="error" id="nameError"></small>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Email Address</label>
+
+                <input type="email" id="email">
+
+                <small class="error" id="emailError"></small>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Phone Number</label>
+
+                <input type="text" id="phone">
+
+                <small class="error" id="phoneError"></small>
+
+            </div>
+
+            <h2>Delivery Address</h2>
+
+            <div class="input-group">
+
+                <label>Street Address</label>
+
+                <input type="text" id="address">
+
+                <small class="error" id="addressError"></small>
+
+            </div>
+
+            <div class="row">
+
+                <div class="input-group">
+
+                    <label>City</label>
+
+                    <input type="text" id="city">
+
+                    <small class="error" id="cityError"></small>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Province</label>
+
+                    <select id="province">
+
+                        <option value="">Select Province</option>
+
+                        <option>Koshi</option>
+
+                        <option>Madhesh</option>
+
+                        <option>Bagmati</option>
+
+                        <option>Gandaki</option>
+
+                        <option>Lumbini</option>
+
+                        <option>Karnali</option>
+
+                        <option>Sudurpashchim</option>
+
+                    </select>
+
+                    <small class="error" id="provinceError"></small>
+
+                </div>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Postal Code</label>
+
+                <input type="text" id="postal">
+
+                <small class="error" id="postalError"></small>
+
+            </div>
+
+            <h2>Payment Method</h2>
+
+            <div class="payment-options">
+
+                <label>
+
+                    <input type="radio" name="payment" value="COD" checked>
+
+                    Cash on Delivery
+
+                </label>
+
+                <label>
+
+                    <input type="radio" name="payment" value="eSewa">
+
+                    eSewa
+
+                </label>
+
+                <label>
+
+                    <input type="radio" name="payment" value="Khalti">
+
+                    Khalti
+
+                </label>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="order-summary">
+
+        <h2>Order Summary</h2>
+
+        <div id="orderItems">
+
+            <!-- Items from cart will appear here -->
+
+        </div>
+
+        <div class="summary-line">
+
+            <span>Subtotal</span>
+
+            <strong id="subtotal">NPR 0</strong>
+
+        </div>
+
+        <div class="summary-line">
+
+            <span>Delivery</span>
+
+            <strong>FREE</strong>
+
+        </div>
+
+        <div class="summary-line total">
+
+            <span>Total</span>
+
+            <strong id="grandTotal">NPR 0</strong>
+
+        </div>
+
+        <button id="placeOrder" class="place-order-btn">
+
+            Place Order
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= SUCCESS POPUP ================= -->
+
+<div class="success-popup" id="successPopup">
+
+    <div class="popup-content">
+
+        <div class="checkmark">✓</div>
+
+       <h2>Order Confirmed</h2>
+
+<p id="orderMessage">
+    Thank you for shopping with Royal Enfield Bhairahawa.
+</p>
+
+        <button onclick="window.location.href='index.html'">
+
+            Continue Shopping
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="checkout.js"></script>
+
+</body>
+</html>

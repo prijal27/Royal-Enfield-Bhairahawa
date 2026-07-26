@@ -11,26 +11,6 @@
 <body>
 <!-- ================= PRELOADER ================= -->
 
-<div id="preloader">
-
-    <div class="loader-content">
-
-        <div class="loader-logo">
-
-             <img src="http://127.0.0.1:5501/content/dam/royal-enfield/india/logos/logo.svg" alt="Royal Enfield">
-            <span>BHAIRAHAWA</span>
-
-        </div>
-
-        <div class="loader-bar">
-
-            <div class="loader-progress"></div>
-
-        </div>
-
-    </div>
-
-</div>
 
   <nav class="navbar">
   <div class="logo">
@@ -49,7 +29,7 @@
         <a href="#">Rider Community</a>
       </div>
     </li>
-    <li><a href="#">Accessories</a></li>
+    <li><a href="accessories.html">Accessories</a></li>
     <li><a href="#">Apparel</a></li>
     <li><a href="#">Promotions</a></li>
     <li><a href="#">Support</a></li>
@@ -95,7 +75,7 @@
     <button class="burger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
-  </div>
+  
 </nav>
  <section class="slider" class="slider hidden">
 
@@ -410,7 +390,7 @@ A modern premium roadster delivering strong performance, agile handling, and dyn
 </section>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   
 <section class="dealer">
 
