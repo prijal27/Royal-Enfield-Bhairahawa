@@ -836,3 +836,55 @@ SHOPPING CART
     border-color:#d62027;
 
 }
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:992px){
+
+.container{
+    width:90%;
+}
+
+.hero h1{
+    font-size:48px;
+}
+
+.section-title{
+    font-size:34px;
+}
+
+}
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+body{
+    overflow-x:hidden;
+}
+
+.container{
+    width:95%;
+}
+
+.hero{
+    height:80vh;
+}
+
+.hero h1{
+    font-size:34px;
+    text-align:center;
+}
+
+.hero p{
+    font-size:16px;
+    text-align:center;
+}
+
+.section-title{
+    font-size:28px;
+}
+
+}
