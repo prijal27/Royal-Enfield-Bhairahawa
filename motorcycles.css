@@ -1,115 +1,14 @@
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
-
 body{
-    background:#111;
-    color:#d62027
+    background:#000;
+    overflow-x:hidden;
+    color: #d62027;
 }
-.navbar{
-
-    position:fixed;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    background:#111;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:18px 50px;
-
-    z-index:999;
-
-    border-bottom:1px solid #222;
-
-}
-
-.logo{
-
-    display:flex;
-
-    flex-direction:column;
-
-}
-
-.logo span{
-
-    color:#d62027;
-
-    font-weight:700;
-
-    letter-spacing:2px;
-
-}
-
-.navbar ul{
-
-    display:flex;
-
-    gap:35px;
-
-    list-style:none;
-
-}
-
-.navbar ul li a{
-
-    text-decoration:none;
-
-    color:white;
-
-    transition:.3s;
-
-    position:relative;
-
-}
-
-.navbar ul li a:hover,
-.navbar ul li a.active{
-
-    color:#d62027;
-
-}
-
-.navbar ul li a::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    bottom:-6px;
-
-    width:0;
-
-    height:2px;
-
-    background:#d62027;
-
-    transition:.3s;
-
-}
-
-.navbar ul li a:hover::after,
-.navbar ul li a.active::after{
-
-    width:100%;
-
-}
-
 .models{
     width:100%;
     padding:80px 8%;
@@ -231,55 +130,3 @@ button:hover{
     color:#d62027;
     letter-spacing:0.5px;
   }
-/* ==========================================
-   TABLET
-========================================== */
-
-@media (max-width:992px){
-
-.container{
-    width:90%;
-}
-
-.hero h1{
-    font-size:48px;
-}
-
-.section-title{
-    font-size:34px;
-}
-
-}
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width:768px){
-
-body{
-    overflow-x:hidden;
-}
-
-.container{
-    width:95%;
-}
-
-.hero{
-    height:80vh;
-}
-
-.hero h1{
-    font-size:34px;
-    text-align:center;
-}
-
-.hero p{
-    font-size:16px;
-    text-align:center;
-}
-
-.section-title{
-    font-size:28px;
-}
-
-}

@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Navbar</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -19,10 +20,10 @@
   </div>
 
   <ul class="nav-links">
-    <li><a href="#">Motorcycles</a></li>
+    <li><a href="models.html">Motorcycles</a></li>
     <li><a href="#">Locate Us</a></li>
     <li class="has-dropdown">
-      <a href="#">Rides <span class="caret"></span></a>
+      <a href="rides.html">Rides <span class="caret"></span></a>
       <div class="dropdown">
         <a href="#">Upcoming Rides</a>
         <a href="#">Ride Stories</a>
@@ -141,12 +142,12 @@
 
         <!-- Previous -->
         <button class="prev">
-            <i class="fa-solid fa-chevron-left"><</i>
+            <i class="fa-solid fa-chevron-left"></i>
         </button>
 
         <!-- Next -->
         <button class="next">
-            <i class="fa-solid fa-chevron-right">></i>
+            <i class="fa-solid fa-chevron-right"></i>
         </button>
 
         <!-- Dots -->
@@ -392,7 +393,84 @@ A modern premium roadster delivering strong performance, agile handling, and dyn
     <!-- JavaScript -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   
-<section class="dealer">
+
+<!-- ================= DEALER LOCATION ================= -->
+ <!-- ==============================
+      CTA SECTION ABOVE FOOTER
+================================ -->
+
+<section class="cta-section" id="cta">
+
+    <div class="cta-container">
+
+        <span class="cta-subtitle">
+            ROYAL ENFIELD BHAIRAHAWA
+        </span>
+
+        <h2>
+            START YOUR NEXT ADVENTURE
+        </h2>
+
+        <p>
+            Book your test ride, visit our showroom, or get in touch with our team.
+            Experience the legacy of Royal Enfield and discover your perfect motorcycle.
+        </p>
+
+        <!-- CTA Buttons -->
+
+        <div class="cta-buttons">
+
+            <a href="book.html" class="cta-btn primary">
+                <i class="fa-solid fa-motorcycle"></i>
+                Book a Test Ride
+            </a>
+
+            <a href="#map" class="cta-btn secondary">
+                <i class="fa-solid fa-location-dot"></i>
+                Find Our Showroom
+            </a>
+
+           
+        </div>
+
+        <!-- Divider -->
+
+        <div class="cta-divider"></div>
+
+        <!-- Social Icons -->
+
+        <div class="social-section">
+
+            <h3>Follow Us</h3>
+
+            <div class="social-icons">
+
+                <a href="#" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="#" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+                <a href="#" aria-label="X">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<script src="script.js"></script>
+</body>
+<section id="map" class="dealer">
 
     <div class="dealer-content">
 
@@ -408,10 +486,9 @@ A modern premium roadster delivering strong performance, agile handling, and dyn
         <p>✉ info@rebhairahawa.com</p>
 
         <a
-            href="https://www.google.com/maps"
+         href="https://www.google.com/maps"
             target="_blank"
-            class="dealer-btn">
-
+            class="dealer-btn" >
             Get Directions
 
         </a>
@@ -429,8 +506,4 @@ A modern premium roadster delivering strong performance, agile handling, and dyn
     </div>
 
 </section>
-</body>
-<!-- ================= DEALER LOCATION ================= -->
-
-
 </html>

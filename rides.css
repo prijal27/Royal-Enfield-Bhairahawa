@@ -1,0 +1,1889 @@
+
+/* =========================================================
+   ROYAL ENFIELD BHAIRAHAWA
+   RIDES PAGE
+   MAIN STYLESHEET
+========================================================= */
+
+
+/* =========================================================
+   01. RESET
+========================================================= */
+
+*{
+      margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+     
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #0d0d0d;
+    color: #ffffff;
+   
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+::selection {
+    background: #d32027;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   02. PRELOADER
+========================================================= */
+
+.rides-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #0d0d0d;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+.rides-loader.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-logo img {
+    width: 220px;
+    max-width: 70vw;
+    margin: 0 auto 12px;
+}
+
+.loader-content span {
+    display: block;
+
+    color: #d32027;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    letter-spacing: 6px;
+}
+
+.loader-line {
+    width: 180px;
+    height: 2px;
+
+    margin: 22px auto 0;
+
+    background: #292929;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.loader-line::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 45%;
+    height: 100%;
+
+    background: #d32027;
+
+    animation: loaderLine 1.5s;
+}
+
+@keyframes loaderLine {
+
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(330%);
+    }
+
+}
+
+
+/* =========================================================
+   03. MAIN NAVBAR
+========================================================= */
+
+.main-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(10, 10, 10, 0.92);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease;
+}
+
+.navbar {
+    width: min(1450px, 94%);
+
+    min-height: 82px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* LOGO */
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    gap: 12px;
+}
+
+.brand img {
+    width: 145px;
+}
+
+.brand span {
+    color: #d32027;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    border-left: 1px solid #555;
+
+    padding-left: 12px;
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    list-style: none;
+
+    margin-left: auto;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #d6d6d6;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    padding: 31px 0;
+
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 23px;
+
+    width: 0;
+    height: 2px;
+
+    background: #d32027;
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links li.active a {
+    color: #ffffff;
+}
+
+.nav-links a:hover::after,
+.nav-links li.active a::after {
+    width: 100%;
+}
+
+
+/* RIGHT SIDE */
+
+.nav-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.login-link {
+    font-size: 13px;
+
+    color: #ffffff;
+
+    transition: color 0.3s ease;
+}
+
+.login-link:hover {
+    color: #d32027;
+}
+
+.search-btn,
+.menu-btn {
+    border: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    cursor: pointer;
+}
+
+.search-btn {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 16px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.search-btn:hover {
+    color: #d32027;
+    transform: scale(1.1);
+}
+
+
+/* HAMBURGER */
+
+.menu-btn {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+}
+
+.menu-btn span {
+    width: 22px;
+    height: 2px;
+
+    background: #ffffff;
+
+    transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   04. SEARCH OVERLAY
+========================================================= */
+
+.search-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.97);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+}
+
+.search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.close-search {
+    position: absolute;
+
+    top: 35px;
+    right: 45px;
+
+    border: none;
+
+    background: none;
+
+    color: #ffffff;
+
+    font-size: 42px;
+
+    font-weight: 200;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.close-search:hover {
+    color: #d32027;
+
+    transform: rotate(90deg);
+}
+
+.search-container {
+    width: min(850px, 85%);
+
+    position: relative;
+}
+
+.search-label {
+    display: block;
+
+    color: #d32027;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+.search-container input {
+    width: 100%;
+
+    padding: 18px 0;
+
+    background: transparent;
+
+    border: none;
+
+    border-bottom: 2px solid #444;
+
+    outline: none;
+
+    color: #ffffff;
+
+    font-size: clamp(22px, 4vw, 42px);
+
+    font-weight: 300;
+}
+
+.search-container input:focus {
+    border-bottom-color: #d32027;
+}
+
+.search-container input::placeholder {
+    color: #555;
+}
+
+.search-suggestions {
+    margin-top: 15px;
+}
+
+.search-suggestions a {
+    display: block;
+
+    padding: 10px 0;
+
+    color: #aaa;
+
+    font-size: 14px;
+}
+
+.search-suggestions a:hover {
+    color: #d32027;
+}
+
+
+/* =========================================================
+   05. MOBILE MENU
+========================================================= */
+
+.mobile-menu {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1500;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #0d0d0d;
+
+    transform: translateX(100%);
+
+    transition: transform 0.5s ease;
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+.mobile-menu ul {
+    list-style: none;
+
+    text-align: center;
+}
+
+.mobile-menu li {
+    margin: 18px 0;
+}
+
+.mobile-menu a {
+    color: #ffffff;
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+    transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    color: #d32027;
+}
+
+.mobile-close {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    border: none;
+
+    background: none;
+
+    color: #ffffff;
+
+    font-size: 40px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   06. HERO
+========================================================= */
+
+.rides-hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.hero-background {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    animation: heroZoom 12s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+
+}
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.55) 45%,
+            rgba(0, 0, 0, 0.15) 100%
+        );
+
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1200px, 90%);
+
+    margin: 80px auto 0;
+
+    padding-left: 5%;
+}
+
+.hero-small-title {
+    display: block;
+
+    color: #d32027;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: clamp(48px, 8vw, 110px);
+
+    line-height: 0.92;
+
+    font-weight: 700;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+.hero-content p {
+    max-width: 560px;
+
+    color: #d1d1d1;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+.hero-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.hero-btn:hover {
+    background: #d32027;
+
+    border-color: #d32027;
+
+    transform: translateY(-3px);
+}
+
+.hero-scroll {
+    position: absolute;
+
+    z-index: 3;
+
+    bottom: 40px;
+    right: 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: #aaa;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+.scroll-line {
+    width: 60px;
+    height: 1px;
+
+    background: #d32027;
+}
+
+
+/* =========================================================
+   07. INTRO
+========================================================= */
+
+.rides-intro {
+    padding: 120px 8% 90px;
+
+    background: #0d0d0d;
+
+    text-align: center;
+}
+
+.section-heading {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.section-heading > span,
+.ride-category-header > span,
+.featured-content > span,
+.community-content > span,
+.cta-content > span {
+    display: block;
+
+    color: #d32027;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    font-size: clamp(38px, 5vw, 65px);
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+}
+
+.section-heading p {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #999;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   08. RIDE EXPLORER
+========================================================= */
+
+.ride-explorer {
+    padding: 40px 0 110px;
+
+    background: #111111;
+
+}
+
+.ride-category-wrapper {
+    width: min(1400px, 90%);
+
+    margin: auto;
+}
+
+.ride-category-header {
+    margin-bottom: 45px;
+}
+
+.ride-category-header h2 {
+    font-size: clamp(36px, 5vw, 62px);
+
+    line-height: 1;
+}
+
+
+/* CATEGORY NAV */
+
+.ride-categories {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    overflow-x: auto;
+
+    padding-bottom: 15px;
+
+    scrollbar-width: none;
+}
+
+.ride-categories::-webkit-scrollbar {
+    display: none;
+}
+
+.ride-category {
+    position: relative;
+
+    flex-shrink: 0;
+
+    padding: 13px 20px;
+
+    border: none;
+
+    border-bottom: 2px solid transparent;
+
+    background: transparent;
+
+    color: #777;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.ride-category:hover,
+.ride-category.active {
+    color: #ffffff;
+
+    border-bottom-color: #d32027;
+}
+
+
+/* =========================================================
+   09. RIDES HORIZONTAL SLIDER
+========================================================= */
+
+.rides-slider-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    margin-top: 35px;
+}
+
+.rides-slider {
+    width: 100%;
+
+    display: flex;
+
+    gap: 20px;
+
+    overflow-x: auto;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+
+    padding:
+        10px
+        max(5%, calc((100vw - 1400px) / 2))
+        35px;
+}
+
+.rides-slider::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* RIDE CARD */
+
+.ride-card {
+    position: relative;
+
+    flex: 0 0 min(550px, 72vw);
+
+    min-height: 620px;
+
+    overflow: hidden;
+
+    background: #181818;
+
+    cursor: pointer;
+}
+
+.ride-image {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+}
+
+.ride-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.ride-image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.55) 45%,
+            rgba(0, 0, 0, 0.1) 100%
+        );
+}
+
+.ride-card:hover .ride-image img {
+    transform: scale(1.08);
+}
+
+
+/* NUMBER */
+
+.ride-number {
+    position: absolute;
+
+    top: 30px;
+    right: 30px;
+
+    z-index: 2;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+
+/* CARD CONTENT */
+
+.ride-card-content {
+    position: absolute;
+
+    z-index: 3;
+
+    left: 40px;
+    right: 40px;
+    bottom: 45px;
+}
+
+.ride-card-content > span {
+    display: block;
+
+    color: #d32027;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.ride-card-content h3 {
+    font-size: clamp(28px, 4vw, 44px);
+
+    line-height: 1;
+
+    margin-bottom: 18px;
+}
+
+.ride-card-content p {
+    max-width: 430px;
+
+    color: #d0d0d0;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+.ride-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition:
+        color 0.3s ease,
+        gap 0.3s ease;
+}
+
+.ride-btn:hover {
+    color: #d32027;
+
+    gap: 18px;
+}
+
+
+/* SLIDER ARROWS */
+
+.ride-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 10;
+
+    width: 55px;
+    height: 55px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    background: rgba(0, 0, 0, 0.7);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.ride-arrow:hover {
+    background: #d32027;
+
+    border-color: #d32027;
+
+    transform:
+        translateY(-50%)
+        scale(1.05);
+}
+
+.ride-prev {
+    left: 25px;
+}
+
+.ride-next {
+    right: 25px;
+}
+
+
+/* =========================================================
+   10. SLIDER CONTROLS
+========================================================= */
+
+.ride-slider-controls {
+    width: min(1400px, 90%);
+
+    margin: 35px auto 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+.ride-progress {
+    flex: 1;
+
+    height: 2px;
+
+    background: #333;
+
+    overflow: hidden;
+}
+
+.ride-progress-bar {
+    display: block;
+
+    width: 25%;
+
+    height: 100%;
+
+    background: #d32027;
+
+    transition: width 0.4s ease;
+}
+
+.ride-counter {
+    min-width: 55px;
+
+    color: #aaa;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   11. FEATURED RIDE
+========================================================= */
+
+.featured-ride {
+    position: relative;
+
+    min-height: 750px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.featured-image {
+    position: absolute;
+
+    inset: 0;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 1s ease;
+}
+
+.featured-ride:hover .featured-image img {
+    transform: scale(1.04);
+}
+
+.featured-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.15)
+        );
+}
+
+.featured-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1200px, 85%);
+
+    margin: auto;
+
+    padding-left: 5%;
+}
+
+.featured-content h2 {
+    font-size: clamp(42px, 7vw, 90px);
+
+    line-height: 0.95;
+
+    margin-bottom: 25px;
+}
+
+.featured-content p {
+    max-width: 500px;
+
+    color: #ccc;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+.featured-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 25px;
+
+    background: #d32027;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.featured-btn:hover {
+    background: #ffffff;
+
+    color: #111111;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   12. COMMUNITY
+========================================================= */
+
+.community-section {
+    min-height: 600px;
+
+    padding: 100px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #151515,
+            #090909
+        );
+}
+
+.community-content {
+    width: min(850px, 100%);
+}
+
+.community-content h2 {
+    font-size: clamp(40px, 6vw, 75px);
+
+    line-height: 0.98;
+
+    margin-bottom: 30px;
+}
+
+.community-content p {
+    max-width: 600px;
+
+    color: #999;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+.community-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border-bottom: 1px solid #d32027;
+
+    padding-bottom: 8px;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    transition:
+        color 0.3s ease,
+        gap 0.3s ease;
+}
+
+.community-btn:hover {
+    color: #d32027;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   13. CTA
+========================================================= */
+
+.rides-cta {
+    padding: 120px 8%;
+
+    text-align: center;
+
+    background: #0d0d0d;
+
+    border-top: 1px solid #222;
+}
+
+.cta-content {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.cta-content h2 {
+    font-size: clamp(40px, 6vw, 78px);
+
+    line-height: 0.95;
+
+    margin-bottom: 25px;
+}
+
+.cta-content p {
+    max-width: 550px;
+
+    margin: 0 auto 35px;
+
+    color: #999;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.cta-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.cta-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    min-width: 210px;
+
+    padding: 15px 22px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+}
+
+.cta-btn.primary {
+    background: #d32027;
+
+    color: #ffffff;
+}
+
+.cta-btn.primary:hover {
+    background: #ffffff;
+
+    color: #111111;
+}
+
+.cta-btn.secondary {
+    border: 1px solid #555;
+
+    color: #ffffff;
+}
+
+.cta-btn.secondary:hover {
+    border-color: #d32027;
+
+    background: #d32027;
+}
+
+
+/* =========================================================
+   14. FOOTER
+========================================================= */
+
+.rides-footer {
+    background: #080808;
+
+    border-top: 1px solid #222;
+}
+
+.footer-container {
+    width: min(1400px, 90%);
+
+    margin: auto;
+
+    padding: 75px 0;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr;
+
+    gap: 60px;
+}
+
+
+/* BRAND */
+
+.footer-brand img {
+    width: 170px;
+
+    margin-bottom: 10px;
+}
+
+.footer-brand > span {
+    display: block;
+
+    color: #d32027;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+.footer-brand p {
+    margin-top: 20px;
+
+    color: #666;
+
+    font-size: 12px;
+}
+
+
+/* LINKS */
+
+.footer-links {
+    display: flex;
+
+    gap: 80px;
+}
+
+.footer-links h4,
+.footer-social h4 {
+    margin-bottom: 20px;
+
+    color: #d32027;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.footer-links a {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #888;
+
+    font-size: 12px;
+
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+
+/* SOCIAL */
+
+.social-icons {
+    display: flex;
+
+    gap: 10px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid #333;
+
+    color: #aaa;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: #d32027;
+
+    border-color: #d32027;
+
+    color: #ffffff;
+
+    transform: translateY(-4px);
+}
+
+
+/* FOOTER BOTTOM */
+
+.footer-bottom {
+    width: min(1400px, 90%);
+
+    margin: auto;
+
+    padding: 20px 0;
+
+    border-top: 1px solid #222;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: #555;
+
+    font-size: 10px;
+}
+
+.footer-bottom a {
+    color: #777;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #d32027;
+}
+
+
+/* =========================================================
+   15. SCROLL REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   16. TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .brand img {
+        width: 125px;
+    }
+
+    .brand span {
+        font-size: 9px;
+    }
+
+    .ride-card {
+        flex-basis: 70vw;
+    }
+
+    .footer-container {
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+}
+
+
+/* =========================================================
+   17. MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        min-height: 70px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+
+    .login-link {
+        display: none;
+    }
+
+    .brand img {
+        width: 125px;
+    }
+
+    .brand span {
+        display: none;
+    }
+
+
+    /* HERO */
+
+    .rides-hero {
+        min-height: 90vh;
+    }
+
+    .hero-content {
+        padding-left: 0;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(48px, 15vw, 75px);
+
+        letter-spacing: -2px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+
+        max-width: 90%;
+    }
+
+    .hero-scroll {
+        bottom: 25px;
+
+        right: 5%;
+    }
+
+
+    /* INTRO */
+
+    .rides-intro {
+        padding:
+            90px
+            7%;
+    }
+
+
+    /* CATEGORIES */
+
+    .ride-category-wrapper {
+        width: 90%;
+    }
+
+    .ride-categories {
+        gap: 3px;
+    }
+
+
+    /* CARDS */
+
+    .ride-card {
+        flex-basis: 82vw;
+
+        min-height: 560px;
+    }
+
+    .rides-slider {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .ride-arrow {
+        width: 45px;
+        height: 45px;
+    }
+
+    .ride-prev {
+        left: 12px;
+    }
+
+    .ride-next {
+        right: 12px;
+    }
+
+    .ride-card-content {
+        left: 28px;
+        right: 28px;
+        bottom: 30px;
+    }
+
+    .ride-card-content h3 {
+        font-size: 32px;
+    }
+
+
+    /* FEATURED */
+
+    .featured-ride {
+        min-height: 650px;
+    }
+
+    .featured-content {
+        padding-left: 0;
+    }
+
+
+    /* COMMUNITY */
+
+    .community-section {
+        min-height: 500px;
+
+        padding:
+            90px
+            7%;
+    }
+
+
+    /* CTA */
+
+    .rides-cta {
+        padding:
+            90px
+            7%;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-btn {
+        width: 100%;
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .footer-links {
+        gap: 50px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =========================================================
+   18. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .hero-content h1 {
+        font-size: 46px;
+    }
+
+    .hero-small-title {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+    .ride-card {
+        flex-basis: 88vw;
+
+        min-height: 520px;
+    }
+
+    .ride-card-content h3 {
+        font-size: 28px;
+    }
+
+    .ride-card-content p {
+        font-size: 12px;
+    }
+
+    .featured-content h2 {
+        font-size: 42px;
+    }
+
+    .community-content h2 {
+        font-size: 40px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+
+        gap: 30px;
+    }
+
+}

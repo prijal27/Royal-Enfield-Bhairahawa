@@ -358,5 +358,140 @@ const observ = new IntersectionObserver((entries)=>{
 });
 
 observ.observe(rideSection);
+// =====================================
+// CTA SECTION JAVASCRIPT
+// =====================================
+
+// Fade In Animation
+const ctaSection = document.querySelector(".cta-section");
+
+const ctaObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+}, {
+
+    threshold: 0.25
+
+});
+
+ctaObserver.observe(ctaSection);
+
+
+// =====================================
+// Smooth Scroll to Test Ride Section
+// =====================================
+
+const bookRideBtn = document.querySelector(".cta-btn.primary");
+
+bookRideBtn.addEventListener("click", function(e){
+
+    const target = document.querySelector("#testride");
+
+    if(target){
+
+        e.preventDefault();
+
+        target.scrollIntoView({
+
+            behavior:"smooth",
+            block:"start"
+
+        });
+
+    }
+
+});
+
+
+// =====================================
+// Ripple Click Effect
+// =====================================
+
+const buttons = document.querySelectorAll(".cta-btn");
+
+buttons.forEach(button => {
+
+    button.addEventListener("click", function(e){
+
+        const ripple = document.createElement("span");
+
+        ripple.classList.add("ripple");
+
+        const rect = button.getBoundingClientRect();
+
+        ripple.style.left = (e.clientX - rect.left) + "px";
+        ripple.style.top = (e.clientY - rect.top) + "px";
+
+        button.appendChild(ripple);
+
+        setTimeout(() => {
+
+            ripple.remove();
+
+        },600);
+
+    });
+
+});
+
+
+// =====================================
+// Social Icon Hover Animation
+// =====================================
+
+const socialIcons = document.querySelectorAll(".social-icons a");
+
+socialIcons.forEach(icon=>{
+
+    icon.addEventListener("mouseenter",()=>{
+
+        icon.style.transform="translateY(-8px) rotate(360deg) scale(1.1)";
+
+    });
+
+    icon.addEventListener("mouseleave",()=>{
+
+        icon.style.transform="translateY(0) rotate(0deg) scale(1)";
+
+    });
+
+});
+
+
+// =====================================
+// CTA Button Hover Effect
+// =====================================
+
+buttons.forEach(button=>{
+
+    button.addEventListener("mouseenter",()=>{
+
+        button.style.transform="translateY(-5px)";
+
+    });
+
+    button.addEventListener("mouseleave",()=>{
+
+        button.style.transform="translateY(0)";
+
+    });
+
+});
+
+
+// =====================================
+// Optional Console Message
+// =====================================
+
+console.log("Royal Enfield Bhairahawa CTA Loaded Successfully");
 
 

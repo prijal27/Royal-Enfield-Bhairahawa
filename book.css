@@ -1,0 +1,456 @@
+/* ==========================
+   BOOK TEST RIDE SECTION
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#000;
+    overflow-x:hidden;
+    color: #d62027;
+}
+
+
+.testride-section{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:80px 8%;
+    background:url("../images/testride-bg.jpg") center center/cover no-repeat;
+    overflow:hidden;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.72);
+}
+
+.testride-container{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:1400px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+/* LEFT SIDE */
+
+.testride-content{
+    color:#fff;
+}
+
+.subtitle{
+    display:inline-block;
+    color:#d32027;
+    letter-spacing:3px;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.testride-content h2{
+    font-size:56px;
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+.testride-content p{
+    color:#cfcfcf;
+    line-height:1.8;
+    font-size:17px;
+    margin-bottom:35px;
+    max-width:520px;
+}
+
+.features{
+    list-style:none;
+}
+
+.features li{
+    margin-bottom:18px;
+    font-size:18px;
+    color:#eee;
+}
+
+/* RIGHT SIDE */
+
+.testride-form{
+    background:rgba(20,20,20,.75);
+    backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:45px;
+    box-shadow:0 20px 45px rgba(0,0,0,.45);
+}
+
+/* INPUTS */
+
+.input-box{
+    position:relative;
+    margin-bottom:28px;
+}
+
+.input-box input,
+.input-box select,
+.input-box textarea{
+
+    width:100%;
+    background:transparent;
+    border:none;
+    outline:none;
+    border-bottom:2px solid #555;
+
+    color:#fff;
+    font-size:16px;
+
+    padding:14px 0;
+
+    transition:.35s;
+}
+
+.input-box textarea{
+    resize:none;
+}
+
+.input-box input:focus,
+.input-box select:focus,
+.input-box textarea:focus{
+
+    border-color:#d32027;
+}
+
+.input-box label{
+
+    position:absolute;
+    left:0;
+    top:14px;
+
+    color:#999;
+    pointer-events:none;
+
+    transition:.3s;
+}
+
+/* Floating label */
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+
+    top:-12px;
+    font-size:13px;
+    color:#d32027;
+}
+
+.textarea-label{
+
+    top:-12px !important;
+    color:#999;
+    font-size:13px;
+}
+
+select{
+    cursor:pointer;
+}
+
+select option{
+
+    background:#111;
+    color:white;
+}
+
+/* Date input */
+
+input[type=date]{
+
+    color:#ddd;
+}
+
+/* Double Row */
+
+.double-input{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+/* Button */
+
+.ride-btn{
+
+    width:100%;
+    border:none;
+    background:#d32027;
+    color:#fff;
+
+    padding:17px;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    border-radius:50px;
+
+    transition:.35s;
+}
+
+.ride-btn:hover{
+
+    background:#fff;
+
+    color:#000;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(211,32,39,.45);
+}
+
+/* Popup */
+
+.success-popup{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.75);
+
+    visibility:hidden;
+    opacity:0;
+
+    transition:.35s;
+
+    z-index:9999;
+}
+
+.success-popup.active{
+
+    visibility:visible;
+    opacity:1;
+}
+
+.popup-box{
+
+    background:#fff;
+
+    width:420px;
+
+    max-width:92%;
+
+    border-radius:20px;
+
+    padding:45px;
+
+    text-align:center;
+
+    animation:popup .35s ease;
+}
+
+.tick{
+
+    width:85px;
+    height:85px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#d32027;
+
+    color:#fff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:42px;
+
+    margin-bottom:22px;
+}
+
+.popup-box h2{
+
+    margin-bottom:12px;
+}
+
+.popup-box p{
+
+    color:#555;
+
+    line-height:1.7;
+
+    margin-bottom:28px;
+}
+
+.popup-box button{
+
+    background:#d32027;
+    color:#fff;
+
+    border:none;
+
+    padding:13px 32px;
+
+    cursor:pointer;
+
+    border-radius:40px;
+
+    transition:.3s;
+}
+
+.popup-box button:hover{
+
+    background:#000;
+}
+
+/* Animation */
+
+@keyframes popup{
+
+    from{
+
+        opacity:0;
+        transform:scale(.75);
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* Responsive */
+
+@media(max-width:1100px){
+
+.testride-container{
+
+grid-template-columns:1fr;
+
+}
+
+.testride-content{
+
+text-align:center;
+
+}
+
+.testride-content p{
+
+margin:auto;
+margin-bottom:35px;
+
+}
+
+.features{
+
+display:inline-block;
+text-align:left;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.testride-section{
+
+padding:70px 20px;
+
+}
+
+.testride-content h2{
+
+font-size:38px;
+
+}
+
+.testride-form{
+
+padding:30px;
+
+}
+
+.double-input{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.testride-content h2{
+
+font-size:30px;
+
+}
+
+.subtitle{
+
+font-size:12px;
+
+letter-spacing:2px;
+
+}
+
+.features li{
+
+font-size:16px;
+
+}
+
+.popup-box{
+
+padding:30px 20px;
+
+}
+
+.tick{
+
+width:70px;
+height:70px;
+
+font-size:32px;
+
+}
+
+}
+/* Fade Animation */
+
+.testride-section{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:1s ease;
+
+}
+
+.testride-section.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}

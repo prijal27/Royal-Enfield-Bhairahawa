@@ -1361,3 +1361,287 @@ body{
 }
 
 }
+/* ======================================
+   CTA SECTION ABOVE FOOTER
+====================================== */
+
+.cta-section{
+    width:100%;
+    background:#0d0d0d;
+    padding:90px 20px;
+    position:relative;
+    overflow:hidden;
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s ease;
+}
+
+.cta-section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.cta-container{
+    max-width:1200px;
+    margin:auto;
+    text-align:center;
+}
+
+/* Subtitle */
+
+.cta-subtitle{
+    display:inline-block;
+    color:#d32027;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
+
+/* Heading */
+
+.cta-container h2{
+    color:#fff;
+    font-size:52px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+/* Description */
+
+.cta-container p{
+    color:#bfbfbf;
+    font-size:17px;
+    line-height:1.8;
+    max-width:720px;
+    margin:0 auto 45px;
+}
+
+/* Buttons */
+
+.cta-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin-bottom:55px;
+}
+
+.cta-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:16px 34px;
+    text-decoration:none;
+    border-radius:50px;
+    font-size:16px;
+    font-weight:600;
+    transition:.35s;
+}
+
+.primary{
+    background:#d32027;
+    color:#fff;
+}
+
+.primary:hover{
+    background:#fff;
+    color:#000;
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(211,32,39,.45);
+}
+
+.secondary{
+    background:transparent;
+    border:2px solid #555;
+    color:#fff;
+}
+
+.secondary:hover{
+    background:#d32027;
+    border-color:#d32027;
+    color:#fff;
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(211,32,39,.35);
+}
+
+/* Divider */
+
+.cta-divider{
+    width:100%;
+    height:1px;
+    background:#2c2c2c;
+    margin:0 auto 45px;
+}
+
+/* Social */
+
+.social-section h3{
+    color:#fff;
+    font-size:24px;
+    margin-bottom:30px;
+}
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.social-icons a{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#1b1b1b;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:22px;
+    transition:.35s;
+}
+
+.social-icons a:hover{
+    background:#d32027;
+    transform:translateY(-8px) rotate(360deg);
+    box-shadow:0 12px 25px rgba(211,32,39,.45);
+}
+
+/* Decorative Glow */
+
+.cta-section::before{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:rgba(211,32,39,.08);
+    top:-140px;
+    left:-140px;
+    filter:blur(90px);
+}
+
+.cta-section::after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:rgba(211,32,39,.08);
+    bottom:-120px;
+    right:-120px;
+    filter:blur(90px);
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.cta-container h2{
+    font-size:42px;
+}
+
+.cta-container p{
+    font-size:16px;
+}
+
+}
+
+@media(max-width:768px){
+
+.cta-section{
+    padding:70px 20px;
+}
+
+.cta-container h2{
+    font-size:34px;
+}
+
+.cta-buttons{
+    flex-direction:column;
+}
+
+.cta-btn{
+    width:100%;
+    max-width:340px;
+    justify-content:center;
+}
+
+.social-icons a{
+    width:52px;
+    height:52px;
+    font-size:20px;
+}
+
+}
+
+@media(max-width:480px){
+
+.cta-subtitle{
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.cta-container h2{
+    font-size:28px;
+}
+
+.cta-container p{
+    font-size:15px;
+}
+
+.cta-btn{
+    font-size:15px;
+    padding:14px 20px;
+}
+
+.social-section h3{
+    font-size:20px;
+}
+
+}
+/* ==========================
+   Ripple Effect
+========================== */
+
+.cta-btn{
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+.ripple{
+
+    position:absolute;
+
+    width:20px;
+    height:20px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.5);
+
+    transform:translate(-50%,-50%) scale(0);
+
+    animation:ripple .6s linear;
+
+    pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+    to{
+
+        transform:translate(-50%,-50%) scale(18);
+
+        opacity:0;
+
+    }
+
+}
