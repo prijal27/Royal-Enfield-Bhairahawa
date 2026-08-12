@@ -55,7 +55,7 @@ form.addEventListener("submit", function (e) {
 
     // Email Validation
 
-   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;   
 
     if (!emailPattern.test(email)) {
 
