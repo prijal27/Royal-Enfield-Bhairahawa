@@ -1,7 +1,6 @@
-
 /* =========================================================
+   ROYAL ENFIELD BHAIRAHAWA
    RIDES PAGE JAVASCRIPT
-   Royal Enfield Bhairahawa
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -13,9 +12,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const loader = document.getElementById("ridesLoader");
 
     if (loader) {
+
+        window.addEventListener("load", function () {
+
+            setTimeout(function () {
+                loader.classList.add("hide");
+            }, 800);
+
+        });
+
+        /* Safety fallback */
         setTimeout(function () {
             loader.classList.add("hide");
-        }, 1200);
+        }, 3000);
     }
 
 
@@ -28,40 +37,56 @@ document.addEventListener("DOMContentLoaded", function () {
     const mobileClose = document.getElementById("mobileClose");
 
     if (menuBtn && mobileMenu) {
+
         menuBtn.addEventListener("click", function () {
             mobileMenu.classList.add("active");
-            document.body.style.overflow = "hidden";
         });
+
     }
 
     if (mobileClose && mobileMenu) {
+
         mobileClose.addEventListener("click", function () {
             mobileMenu.classList.remove("active");
-            document.body.style.overflow = "";
         });
+
     }
 
-    const mobileLinks = document.querySelectorAll(".mobile-menu a");
+
+    /* Close mobile menu when link clicked */
+
+    const mobileLinks =
+        document.querySelectorAll(".mobile-menu a");
 
     mobileLinks.forEach(function (link) {
+
         link.addEventListener("click", function () {
+
             if (mobileMenu) {
                 mobileMenu.classList.remove("active");
             }
 
-            document.body.style.overflow = "";
         });
+
     });
 
 
     /* =====================================================
-       3. SEARCH OVERLAY
+       3. SEARCH
     ===================================================== */
 
-    const openSearch = document.getElementById("openSearch");
-    const closeSearch = document.getElementById("closeSearch");
-    const searchOverlay = document.getElementById("searchOverlay");
-    const searchInput = document.getElementById("searchInput");
+    const openSearch =
+        document.getElementById("openSearch");
+
+    const closeSearch =
+        document.getElementById("closeSearch");
+
+    const searchOverlay =
+        document.getElementById("searchOverlay");
+
+    const searchInput =
+        document.getElementById("searchInput");
+
     const searchSuggestions =
         document.getElementById("searchSuggestions");
 
@@ -72,10 +97,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             searchOverlay.classList.add("active");
 
-            document.body.style.overflow = "hidden";
-
             if (searchInput) {
-                searchInput.focus();
+                setTimeout(function () {
+                    searchInput.focus();
+                }, 300);
             }
 
         });
@@ -89,14 +114,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             searchOverlay.classList.remove("active");
 
-            document.body.style.overflow = "";
-
         });
 
     }
 
 
-    /* Close search with ESC */
+    /* ESC closes search */
 
     document.addEventListener("keydown", function (event) {
 
@@ -110,28 +133,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 mobileMenu.classList.remove("active");
             }
 
-            document.body.style.overflow = "";
-
         }
 
     });
 
 
     /* =====================================================
-       4. SEARCH
+       4. SEARCH RIDES
     ===================================================== */
 
     if (searchInput && searchSuggestions) {
 
         searchInput.addEventListener("input", function () {
 
-            const searchText =
+            const text =
                 searchInput.value.toLowerCase().trim();
 
             searchSuggestions.innerHTML = "";
 
 
-            if (searchText === "") {
+            if (text === "") {
                 return;
             }
 
@@ -139,27 +160,24 @@ document.addEventListener("DOMContentLoaded", function () {
             const cards =
                 document.querySelectorAll(".ride-card");
 
-
             let found = false;
 
 
             cards.forEach(function (card) {
 
-                const titleElement =
+                const title =
                     card.querySelector("h3");
 
-                if (!titleElement) {
+                if (!title) {
                     return;
                 }
 
 
-                const title =
-                    titleElement.textContent
-                        .toLowerCase()
-                        .trim();
+                const rideName =
+                    title.textContent.toLowerCase();
 
 
-                if (title.includes(searchText)) {
+                if (rideName.includes(text)) {
 
                     found = true;
 
@@ -170,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     result.href = "#all-rides";
 
                     result.textContent =
-                        titleElement.textContent.trim();
+                        title.textContent;
 
 
                     result.addEventListener(
@@ -180,8 +198,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             searchOverlay.classList.remove(
                                 "active"
                             );
-
-                            document.body.style.overflow = "";
 
                         }
                     );
@@ -226,35 +242,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
         button.addEventListener("click", function () {
 
-            const selectedCategory =
-                button.getAttribute("data-category");
+            const category =
+                button.dataset.category;
 
 
-            /* Remove active from all buttons */
+            /* Active button */
 
             categoryButtons.forEach(function (btn) {
-
                 btn.classList.remove("active");
-
             });
-
-
-            /* Add active to clicked button */
 
             button.classList.add("active");
 
 
-            /* Show / hide cards */
+            /* Filter cards */
 
             rideCards.forEach(function (card) {
 
                 const cardCategory =
-                    card.getAttribute("data-category");
+                    card.dataset.category;
 
 
                 if (
-                    selectedCategory === "all" ||
-                    cardCategory === selectedCategory
+                    category === "all" ||
+                    category === cardCategory
                 ) {
 
                     card.style.display = "";
@@ -268,15 +279,13 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
 
-            /* Return slider to beginning */
+            /* Reset slider */
 
             const slider =
                 document.getElementById("ridesSlider");
 
             if (slider) {
-
                 slider.scrollLeft = 0;
-
             }
 
 
@@ -288,49 +297,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       6. RIDE SLIDER
+       6. HORIZONTAL RIDE SLIDER
     ===================================================== */
 
     const slider =
         document.getElementById("ridesSlider");
 
-    const previousButton =
+    const previous =
         document.getElementById("ridePrev");
 
-    const nextButton =
+    const next =
         document.getElementById("rideNext");
 
 
     function getCardWidth() {
 
-        const visibleCard =
+        const card =
             document.querySelector(
                 ".ride-card:not([style*='display: none'])"
             );
 
 
-        if (!visibleCard) {
+        if (!card) {
             return 0;
         }
 
 
-        return visibleCard.offsetWidth + 20;
+        const gap = 20;
+
+        return card.offsetWidth + gap;
 
     }
 
 
     /* NEXT */
 
-    if (nextButton && slider) {
+    if (next && slider) {
 
-        nextButton.addEventListener("click", function () {
+        next.addEventListener("click", function () {
 
             slider.scrollBy({
-
                 left: getCardWidth(),
-
                 behavior: "smooth"
-
             });
 
         });
@@ -340,22 +348,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* PREVIOUS */
 
-    if (previousButton && slider) {
+    if (previous && slider) {
 
-        previousButton.addEventListener(
-            "click",
-            function () {
+        previous.addEventListener("click", function () {
 
-                slider.scrollBy({
+            slider.scrollBy({
+                left: -getCardWidth(),
+                behavior: "smooth"
+            });
 
-                    left: -getCardWidth(),
-
-                    behavior: "smooth"
-
-                });
-
-            }
-        );
+        });
 
     }
 
@@ -393,36 +395,31 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        let closestCard = 0;
-
-        let smallestDistance = Infinity;
+        let closest = 0;
+        let distance = Infinity;
 
 
         visibleCards.forEach(function (card, index) {
 
-            const distance =
+            const cardDistance =
                 Math.abs(
                     card.offsetLeft -
                     slider.scrollLeft
                 );
 
 
-            if (distance < smallestDistance) {
+            if (cardDistance < distance) {
 
-                smallestDistance = distance;
-
-                closestCard = index;
+                distance = cardDistance;
+                closest = index;
 
             }
 
         });
 
 
-        const current =
-            closestCard + 1;
-
-        const total =
-            visibleCards.length;
+        const current = closest + 1;
+        const total = visibleCards.length;
 
 
         if (counter) {
@@ -437,11 +434,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (progress) {
 
-            const percentage =
-                (current / total) * 100;
-
             progress.style.width =
-                percentage + "%";
+                ((current / total) * 100) + "%";
 
         }
 
@@ -458,120 +452,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-   /* =====================================================
-   8. HORIZONTAL EXPLORER SCROLL
-===================================================== */
-
-const explorer = document.getElementById("all-rides");
-
-if (explorer && slider) {
-
-    let explorerLocked = false;
-
-    window.addEventListener(
-        "wheel",
-        function (event) {
-
-            /* Desktop only */
-            if (window.innerWidth <= 800) {
-                return;
-            }
-
-            const rect =
-                explorer.getBoundingClientRect();
-
-            const explorerTop =
-                rect.top;
-
-            const explorerBottom =
-                rect.bottom;
-
-            /*
-                Activate only when Explorer is
-                around the viewport.
-            */
-
-            if (
-                explorerTop <= 100 &&
-                explorerBottom > window.innerHeight
-            ) {
-
-                const maxScroll =
-                    slider.scrollWidth -
-                    slider.clientWidth;
-
-                const currentScroll =
-                    slider.scrollLeft;
-
-
-                /* =====================================
-                   MOVING RIGHT
-                ===================================== */
-
-                if (event.deltaY > 0) {
-
-                    if (currentScroll < maxScroll) {
-
-                        event.preventDefault();
-
-                        slider.scrollLeft +=
-                            event.deltaY;
-
-                        explorerLocked = true;
-
-                    } else {
-
-                        explorerLocked = false;
-
-                    }
-
-                }
-
-
-                /* =====================================
-                   MOVING LEFT
-                ===================================== */
-
-                else if (event.deltaY < 0) {
-
-                    if (currentScroll > 0) {
-
-                        event.preventDefault();
-
-                        slider.scrollLeft +=
-                            event.deltaY;
-
-                        explorerLocked = true;
-
-                    } else {
-
-                        explorerLocked = false;
-
-                    }
-
-                }
-
-            }
-
-        },
-        {
-            passive: false
-        }
-    );
-
-}
+    /* =====================================================
+       8. IMPORTANT
+       DO NOT CONVERT VERTICAL MOUSE WHEEL
+       INTO HORIZONTAL SCROLL
+       
+       This allows the whole page to scroll normally.
+    ===================================================== */
 
 
     /* =====================================================
-       9. DRAG SLIDER
+       9. DRAG TO SLIDE
     ===================================================== */
 
     if (slider) {
 
-        let isDragging = false;
-
+        let dragging = false;
         let startX = 0;
-
         let startScroll = 0;
 
 
@@ -579,14 +476,14 @@ if (explorer && slider) {
             "mousedown",
             function (event) {
 
-                isDragging = true;
+                dragging = true;
 
                 startX = event.pageX;
 
                 startScroll =
                     slider.scrollLeft;
 
-                slider.classList.add("dragging");
+                slider.style.cursor = "grabbing";
 
             }
         );
@@ -596,7 +493,7 @@ if (explorer && slider) {
             "mousemove",
             function (event) {
 
-                if (!isDragging) {
+                if (!dragging) {
                     return;
                 }
 
@@ -615,99 +512,56 @@ if (explorer && slider) {
         );
 
 
+        function stopDragging() {
+
+            dragging = false;
+
+            slider.style.cursor = "grab";
+
+        }
+
+
         slider.addEventListener(
             "mouseup",
-            function () {
-
-                isDragging = false;
-
-                slider.classList.remove(
-                    "dragging"
-                );
-
-            }
+            stopDragging
         );
-
 
         slider.addEventListener(
             "mouseleave",
-            function () {
-
-                isDragging = false;
-
-                slider.classList.remove(
-                    "dragging"
-                );
-
-            }
+            stopDragging
         );
 
     }
 
 
     /* =====================================================
-       10. SCROLL REVEAL
+       10. HERO BUTTON
     ===================================================== */
 
-    const revealElements =
-        document.querySelectorAll(
-            ".rides-intro, " +
-            ".ride-explorer, " +
-            ".featured-ride, " +
-            ".community-section, " +
-            ".rides-cta"
-        );
+    const heroButton =
+        document.querySelector(".hero-btn");
 
 
-    if ("IntersectionObserver" in window) {
+    if (heroButton) {
 
-        const revealObserver =
-            new IntersectionObserver(
-                function (entries) {
+        heroButton.addEventListener(
+            "click",
+            function (event) {
 
-                    entries.forEach(
-                        function (entry) {
+                const target =
+                    document.getElementById("all-rides");
 
-                            if (
-                                entry.isIntersecting
-                            ) {
 
-                                entry.target.classList.add(
-                                    "visible"
-                                );
+                if (target) {
 
-                                revealObserver.unobserve(
-                                    entry.target
-                                );
+                    event.preventDefault();
 
-                            }
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
 
-                        }
-                    );
-
-                },
-                {
-                    threshold: 0.15
                 }
-            );
-
-
-        revealElements.forEach(
-            function (element) {
-
-                element.classList.add("reveal");
-
-                revealObserver.observe(element);
-
-            }
-        );
-
-    } else {
-
-        revealElements.forEach(
-            function (element) {
-
-                element.classList.add("visible");
 
             }
         );
@@ -716,7 +570,36 @@ if (explorer && slider) {
 
 
     /* =====================================================
-       11. NAVBAR HIDE / SHOW
+       11. BACK TO TOP
+    ===================================================== */
+
+    const backTop =
+        document.querySelector(
+            ".footer-bottom a"
+        );
+
+
+    if (backTop) {
+
+        backTop.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       12. NAVBAR HIDE / SHOW
     ===================================================== */
 
     const header =
@@ -773,10 +656,9 @@ if (explorer && slider) {
 
 
     /* =====================================================
-       12. INITIAL SETUP
+       13. INITIALIZE
     ===================================================== */
 
     updateCounter();
 
 });
-document.body.style.overflow = "";

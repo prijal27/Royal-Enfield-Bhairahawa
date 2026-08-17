@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Royal Enfield Rides | Bhairahawa</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Rides CSS -->
+    <link rel="stylesheet" href="rides.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<nav class="navbar">
+
+    <!-- LOGO -->
+
+   <div class="logo"id="royalLogo">
+    <div class="logo-image">
+    <img src="images/logo.png" alt="Royal Enfield">
+    </div>
+    <span>BHAIRAHAWA</span>
+</div>
+
+
+    <!-- NAVIGATION -->
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="../index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="../models.html">
+                Motorcycles
+            </a>
+        </li>
+
+        <li>
+            <a href="rides.html" class="active">
+                Rides
+            </a>
+        </li>
+
+        <li>
+            <a href="../accessories.html">
+                Accessories
+            </a>
+        </li>
+
+    </ul>
+
+
+    <!-- RIGHT SIDE -->
+
+    <div class="nav-right">
+
+        <a href="../login.html">
+            Login
+        </a>
+
+        <button
+            class="search-btn"
+            id="searchBtn"
+            aria-label="Search"
+        >
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================================
+     SEARCH OVERLAY
+========================================= -->
+
+<div class="search-overlay" id="searchOverlay">
+
+    <button
+        class="close-search"
+        id="closeSearch"
+    >
+        &times;
+    </button>
+
+    <div class="search-box">
+
+        <span>SEARCH RIDES</span>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search for a ride..."
+        >
+
+        <div id="searchResults"></div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="rides-hero">
+
+    <img
+        src="images/himalayan-odyssey.jpg"
+        alt="Royal Enfield Himalayan Ride"
+        class="hero-image"
+    >
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+        <span>
+            ROYAL ENFIELD BHAIRAHAWA
+        </span>
+
+        <h1>
+            RIDE BEYOND
+            <br>
+            BOUNDARIES
+        </h1>
+
+        <p>
+            Discover roads less travelled.
+            Experience adventure, freedom
+            and pure motorcycling.
+        </p>
+
+        <a
+            href="#rides"
+            class="hero-btn"
+        >
+            EXPLORE RIDES
+            <i class="fa-solid fa-arrow-down"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     INTRO
+========================================= -->
+
+<section class="rides-intro">
+
+    <span class="section-label">
+        RIDE WITH US
+    </span>
+
+    <h2>
+        EVERY ROAD HAS
+        <br>
+        A STORY
+    </h2>
+
+    <p>
+        From the mountains of the Himalayas to
+        open highways, every ride is an opportunity
+        to discover something new.
+    </p>
+
+</section>
+
+
+
+<!-- =========================================
+     RIDES
+========================================= -->
+
+<section class="rides-section" id="rides">
+
+
+    <div class="section-heading">
+
+        <span>
+            EXPLORE
+        </span>
+
+        <h2>
+            OUR RIDES
+        </h2>
+
+    </div>
+
+
+
+    <!-- CATEGORY -->
+
+    <div class="ride-categories">
+
+        <button
+            class="category-btn active"
+            data-category="all"
+        >
+            ALL RIDES
+        </button>
+
+        <button
+            class="category-btn"
+            data-category="himalayan"
+        >
+            HIMALAYAN ODYSSEY
+        </button>
+
+        <button
+            class="category-btn"
+            data-category="moto"
+        >
+            MOTO HIMALAYA
+        </button>
+
+        <button
+            class="category-btn"
+            data-category="leh"
+        >
+            LEH LADAKH
+        </button>
+
+        <button
+            class="category-btn"
+            data-category="community"
+        >
+            COMMUNITY RIDES
+        </button>
+
+    </div>
+
+
+
+    <!-- RIDE CARDS -->
+
+    <div class="ride-container">
+
+
+        <!-- RIDE 01 -->
+
+        <div
+            class="ride-card"
+            data-category="himalayan"
+        >
+
+            <img
+                src="images/himalayan-odyssey.jpg"
+                alt="Himalayan Odyssey"
+            >
+
+            <div class="ride-card-content">
+
+                <span>
+                    HIMALAYAN ADVENTURE
+                </span>
+
+                <h3>
+                    Himalayan Odyssey
+                </h3>
+
+                <p>
+                    Ride across the world's highest
+                    mountain roads and experience
+                    the raw beauty of the Himalayas.
+                </p>
+
+                <button class="view-btn">
+                    EXPLORE RIDE
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIDE 02 -->
+
+        <div
+            class="ride-card"
+            data-category="moto"
+        >
+
+            <img
+                src="images/moto-himalaya.jpg"
+                alt="Moto Himalaya"
+            >
+
+            <div class="ride-card-content">
+
+                <span>
+                    HIMALAYAN JOURNEY
+                </span>
+
+                <h3>
+                    Moto Himalaya
+                </h3>
+
+                <p>
+                    Experience Nepal and the Himalayas
+                    like never before on an unforgettable
+                    motorcycle journey.
+                </p>
+
+                <button class="view-btn">
+                    EXPLORE RIDE
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIDE 03 -->
+
+        <div
+            class="ride-card"
+            data-category="leh"
+        >
+
+            <img
+                src="images/leh-ladakh.jpg"
+                alt="Leh Ladakh"
+            >
+
+            <div class="ride-card-content">
+
+                <span>
+                    ULTIMATE ADVENTURE
+                </span>
+
+                <h3>
+                    Leh Ladakh
+                </h3>
+
+                <p>
+                    Discover breathtaking mountain passes
+                    and experience an unforgettable
+                    Royal Enfield adventure.
+                </p>
+
+                <button class="view-btn">
+                    EXPLORE RIDE
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIDE 04 -->
+
+        <div
+            class="ride-card"
+            data-category="community"
+        >
+
+            <img
+                src="images/community-rides.jpg"
+                alt="Community Rides"
+            >
+
+            <div class="ride-card-content">
+
+                <span>
+                    RIDER COMMUNITY
+                </span>
+
+                <h3>
+                    Community Rides
+                </h3>
+
+                <p>
+                    Explore hidden roads, meet fellow
+                    riders and create unforgettable
+                    memories together.
+                </p>
+
+                <button class="view-btn">
+                    JOIN THE RIDE
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FEATURED RIDE
+========================================= -->
+
+<section class="featured-ride">
+
+    <img
+        src="images/himalayan-odyssey.jpg"
+        alt="Adventure Ride"
+    >
+
+    <div class="featured-overlay"></div>
+
+
+    <div class="featured-content">
+
+        <span>
+            FEATURED ADVENTURE
+        </span>
+
+        <h2>
+            FIND YOUR
+            <br>
+            OWN ROAD
+        </h2>
+
+        <p>
+            The road is waiting.
+            All you need is the courage
+            to take the first turn.
+        </p>
+
+        <a href="#" class="featured-btn">
+            DISCOVER MORE
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     COMMUNITY
+========================================= -->
+
+<section class="community">
+
+    <div class="community-content">
+
+        <span>
+            ROYAL ENFIELD COMMUNITY
+        </span>
+
+        <h2>
+            MORE THAN A RIDE.
+            <br>
+            IT'S A COMMUNITY.
+        </h2>
+
+        <p>
+            Connect with riders from Bhairahawa
+            and beyond. Share your stories,
+            join group rides and become part
+            of the Royal Enfield community.
+        </p>
+
+        <a href="#" class="community-btn">
+            JOIN OUR COMMUNITY
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CTA
+========================================= -->
+
+<section class="rides-cta">
+
+    <span>
+        ROYAL ENFIELD BHAIRAHAWA
+    </span>
+
+    <h2>
+        YOUR NEXT
+        <br>
+        ADVENTURE AWAITS
+    </h2>
+
+    <p>
+        Choose your motorcycle,
+        find your route,
+        and start your next journey.
+    </p>
+
+    <div class="cta-buttons">
+
+        <a
+            href="../book.html"
+            class="cta-btn primary"
+        >
+            <i class="fa-solid fa-motorcycle"></i>
+            BOOK A TEST RIDE
+        </a>
+
+        <a
+            href="../index.html#map"
+            class="cta-btn secondary"
+        >
+            <i class="fa-solid fa-location-dot"></i>
+            FIND OUR SHOWROOM
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <img
+                src="../images/logo.svg"
+                alt="Royal Enfield"
+            >
+
+            <span>BHAIRAHAWA</span>
+
+            <p>
+                Pure Motorcycling.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                EXPLORE
+            </h4>
+
+            <a href="../models.html">
+                Motorcycles
+            </a>
+
+            <a href="rides.html">
+                Rides
+            </a>
+
+            <a href="../accessories.html">
+                Accessories
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                SUPPORT
+            </h4>
+
+            <a href="../book.html">
+                Book a Test Ride
+            </a>
+
+            <a href="../index.html#map">
+                Locate Us
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                FOLLOW US
+            </h4>
+
+            <div class="social-icons">
+
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Royal Enfield Bhairahawa.
+            All Rights Reserved.
+        </p>
+
+        <a href="../index.html">
+            BACK TO HOME
+        </a>
+
+    </div>
+
+</footer>
+
+
+
+<script src="rides.js"></script>
+
+</body>
+</html>

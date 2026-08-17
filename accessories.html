@@ -9,6 +9,7 @@
 <title>Royal Enfield Bhairahawa | Accessories</title>
 
 <link rel="stylesheet" href="accessories.css">
+<link rel="stylesheet" href="responsive.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -20,13 +21,12 @@
 
 <nav class="navbar">
 
-    <div class="logo">
-
-        <img src="images/logo.svg" alt="Royal Enfield">
-
-        <span>BHAIRAHAWA</span>
-
+   <div class="logo">
+    <div class="logo-image">
+    <img src="images/logo.png" alt="Royal Enfield">
     </div>
+    <span>BHAIRAHAWA</span>
+</div>
 
     <ul>
 
@@ -67,7 +67,7 @@
 
     <button class="filter-btn active" data-filter="all">All</button>
 
-    <button class="filter-btn" data-filter="helmet">Helmets</button>
+    <button class="filter-btn" data-filter="helmet" >Helmets</button>
 
     <button class="filter-btn" data-filter="jacket">Jackets</button>
 
@@ -80,114 +80,158 @@
 </section>
 <!-- ================= PRODUCTS ================= -->
 
+<!-- ================= PRODUCTS ================= -->
+
 <section class="products">
 
-<div class="product-card"
- data-name="Explorer Helmet"
- data-category="helmet"
-     data-price="18500"
-     data-image="images/helmet.jpg">
+    <!-- HELMET -->
+    <div class="product-card"
+         data-category="helmet"
+         data-name="Explorer Helmet"
+         data-price="18500"
+         data-image="images/helmet.jpg">
 
-<img src="images/helmet.jpg">
+        <div class="product-image">
+            <img src="images/helmet.jpg" alt="Explorer Helmet">
+        </div>
 
-<h3>Explorer Helmet</h3>
+        <div class="product-details">
+            <h3>Explorer Helmet</h3>
+            <p>Premium Touring Helmet</p>
+            <h4>NPR 18,500</h4>
 
-<p>Premium Touring Helmet</p>
+            <button>
+                Add to Cart
+                <span>🛒</span>
+            </button>
+        </div>
 
-<h4>NPR 18,500</h4>
+    </div>
 
-<button>Add to Cart</button>
 
-</div>
+    <!-- JACKET -->
+    <div class="product-card"
+         data-category="jacket"
+         data-name="Explorer Riding Jacket"
+         data-price="24000"
+         data-image="images/jacket.jpg">
 
-<div class="product-card"
-data-category="jacket"
- data-name="Explorer Riding Jacket"
-     data-price="24000"
-     data-image="images/jacket.jpg">
+        <div class="product-image">
+            <img src="images/jacket.jpg" alt="Riding Jacket">
+        </div>
 
-<img src="images/jacket.jpg">
+        <div class="product-details">
+            <h3>Riding Jacket</h3>
+            <p>Adventure Touring Jacket</p>
+            <h4>NPR 24,000</h4>
 
-<h3>Riding Jacket</h3>
+            <button>
+                Add to Cart
+                <span>🛒</span>
+            </button>
+        </div>
 
-<p>Adventure Touring Jacket</p>
+    </div>
 
-<h4>NPR 24,000</h4>
 
-<button>Add to Cart</button>
+    <!-- GLOVES -->
+    <div class="product-card"
+         data-category="gloves"
+         data-name="Explorer Leather Gloves"
+         data-price="6500"
+         data-image="images/gloves.jpg">
 
-</div>
+        <div class="product-image">
+            <img src="images/gloves.jpg" alt="Leather Gloves">
+        </div>
 
-<div class="product-card"
-data-category="gloves"
- data-name="Explorer Leather Gloves"
-     data-price="6500"
-     data-image="images/gloves.jpg">
+        <div class="product-details">
+            <h3>Leather Gloves</h3>
+            <p>Water Resistant Gloves</p>
+            <h4>NPR 6,500</h4>
 
-<img src="images/gloves.jpg">
+            <button>
+                Add to Cart
+                <span>🛒</span>
+            </button>
+        </div>
 
-<h3>Leather Gloves</h3>
+    </div>
 
-<p>Water Resistant Gloves</p>
 
-<h4>NPR 6,500</h4>
+    <!-- BOOTS -->
+    <div class="product-card"
+         data-category="boots"
+         data-name="Explorer Adventure Boots"
+         data-price="21000"
+         data-image="images/boots.jpg">
 
-<button>Add to Cart</button>
+        <div class="product-image">
+            <img src="images/boots.jpg" alt="Adventure Boots">
+        </div>
 
-</div>
+        <div class="product-details">
+            <h3>Adventure Boots</h3>
+            <p>Premium Leather Boots</p>
+            <h4>NPR 21,000</h4>
 
-<div class="product-card"
-data-category="boots"
- data-name="Explorer Adventure Boots"
-     data-price="21000"
-     data-image="images/boots.jpg">
+            <button>
+                Add to Cart
+                <span>🛒</span>
+            </button>
+        </div>
 
-<img src="images/boots.jpg">
+    </div>
 
-<h3>Adventure Boots</h3>
 
-<p>Premium Leather Boots</p>
+    <!-- SADDLE BAG -->
+    <div class="product-card"
+         data-category="luggage"
+         data-name="Explorer Saddle Bag"
+         data-price="15500"
+         data-image="images/saddlebag.jpg">
 
-<h4>NPR 21,000</h4>
+        <div class="product-image">
+            <img src="images/saddlebag.jpg" alt="Saddle Bag">
+        </div>
 
-<button>Add to Cart</button>
+        <div class="product-details">
+            <h3>Saddle Bag</h3>
+            <p>Long Ride Luggage</p>
+            <h4>NPR 15,500</h4>
 
-</div>
+            <button>
+                Add to Cart
+                <span>🛒</span>
+            </button>
+        </div>
 
-<div class="product-card"
-data-category="luggage"
- data-name="Explorer Saddle Bag"
-     data-price="15500"
-     data-image="images/saddlebag.jpg">
+    </div>
 
-<img src="images/saddlebag.jpg">
 
-<h3>Saddle Bag</h3>
+    <!-- CRASH GUARD -->
+    <div class="product-card"
+         data-category="protection"
+         data-name="Explorer Crash Guard"
+         data-price="9500"
+         data-image="images/crashguard.jpg">
 
-<p>Long Ride Luggage</p>
+        <div class="product-image">
+            <img src="images/crashguard.jpg" alt="Crash Guard">
+        </div>
 
-<h4>NPR 15,500</h4>
+        <div class="product-details">
+            <h3>Crash Guard</h3>
+            <p>Heavy Duty Protection</p>
+            <h4>NPR 9,500</h4>
 
-<button>Add to Cart</button>
+            <button>
+                Add to Cart
+                <span>🛒</span>
+            </button>
+        </div>
 
-</div>
-
-<div class="product-card"
- data-name="Explorer Crash Guard"
-     data-price="9500"
-     data-image="images/crashguard.jpg">
-
-<img src="images/crashguard.jpg">
-
-<h3>Crash Guard</h3>
-
-<p>Heavy Duty Protection</p>
-
-<h4>NPR 9,500</h4>
-
-<button>Add to Cart</button>
-
-</div>
+    </div>
 
 </section>
 
